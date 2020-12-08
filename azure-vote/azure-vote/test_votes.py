@@ -38,3 +38,8 @@ def test_prod(app, client):
     app.config['env'] = 'prod'
     rv = client.get('/')
     assert status.HTTP_500_INTERNAL_SERVER_ERROR == rv.status_code
+
+@pytest.mark.skipif(os.getenv("TEST_LEVEL", '') != "all",reason="always fails")
+def test_fail(app, client):
+    """This test is always failing"""
+    assert False
