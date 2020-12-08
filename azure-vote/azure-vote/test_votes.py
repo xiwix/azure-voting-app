@@ -20,12 +20,12 @@ def client(app):
         #     init_db()
         yield client
 
-def test_db_call(app, client):
-    """Database select request should not fail"""
+# def test_db_call(app, client):
+#     """Database select request should not fail"""
 
-    rv = client.get('/results')
-    assert status.is_success(rv.status_code)
-    # assert b'()' in rv.data
+#     rv = client.get('/results')
+#     assert status.is_success(rv.status_code)
+#     # assert b'()' in rv.data
 
 
 def test_health(app, client):
